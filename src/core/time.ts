@@ -49,7 +49,7 @@ const getAge = (birthDate: string) => {
 
 const getAPIFormat = (date? : Date) => {
   const DateActive: Date = date ? date : new Date();
-  return format(DateActive,"dd-MM-yyyy")
+  return format(DateActive,"yyyy-MM-dd")
 }
 
 const getThisYear = () => format(new Date(),"yyyy")

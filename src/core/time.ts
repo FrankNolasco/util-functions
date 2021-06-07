@@ -7,6 +7,7 @@ import {
   getYear,
   isLeapYear,
   format,
+  addHours
 } from "date-fns";
 
 const getTimeZone = (date?: Date) => {
@@ -54,7 +55,8 @@ const getAPIFormat = (date? : Date) => {
 
 const getThisYear = () => format(new Date(),"yyyy")
 
+const formatLocalTZ = (dateOnTZ0 : string | Date) => format(addHours(new Date(dateOnTZ0),-getTimeZone()),"dd/MM/yyyy hh:mm:ss a")
 
-const time = { getTimeZone, getLastBirthday, getAge, getAPIFormat, getThisYear };
+const time = { getTimeZone, getLastBirthday, getAge, getAPIFormat, getThisYear, formatLocalTZ };
 
 export default time
